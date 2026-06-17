@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+<img width="1920" height="1440" alt="faq accordion shots" src="https://github.com/user-attachments/assets/98ddc885-acdf-4be6-8972-133464384989" />
 
 ### Links
 

@@ -31,7 +31,7 @@ const faqs = [
 ];
 
 function FAQAccordion() {
-  const [openId, setOpenId] = useState(null);
+  const [openId, setOpenId] = useState(1);
   const toggle = (id) => {
     setOpenId((prev) => (prev === id ? null : id));
   };
@@ -47,27 +47,28 @@ function FAQAccordion() {
           />
           <h1 className="text-preset-1">FAQs</h1>
         </div>
-
         <div>
           {faqs.map((faq, index) => {
             const isOpen = openId === faq.id;
             const isLast = index === faqs.length - 1;
-
             return (
               <div key={faq.id}>
                 <div
-                  className="mb-300 flex cursor-pointer flex-row items-center gap-300"
+                  type="button"
+                  className="group mb-300 flex cursor-pointer flex-row items-center gap-300"
                   onClick={() => toggle(faq.id)}
                 >
-                  <p className="flex-1 text-preset-2">{faq.question}</p>
+                  <p className="flex-1 text-preset-2 group-hover:text-violet-600">
+                    {faq.question}
+                  </p>
                   <img
                     src={isOpen ? iconMinus : iconPlus}
                     alt={isOpen ? 'Collapse' : 'Expand'}
+                    aria-hidden="true"
                     className="h-[30px] w-[30px] justify-end"
                   />
                 </div>
                 {isOpen && <p className="mb-300 text-preset-3">{faq.answer}</p>}
-
                 {!isLast && (
                   <div className="my-300 border border-purple-100"></div>
                 )}

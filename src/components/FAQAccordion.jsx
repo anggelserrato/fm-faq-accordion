@@ -38,12 +38,12 @@ function FAQAccordion() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-purple-100 bg-mobile-pattern bg-contain bg-top bg-no-repeat md:bg-desktop-pattern">
-      <section className="flex w-[90%] max-w-[327px] flex-col items-start justify-center gap-300 rounded-lg bg-white p-300 shadow-card md:max-w-[600px] md:p-500">
+      <section className="flex w-[90%] max-w-[327px] flex-col items-start justify-center gap-300 rounded-lg bg-white p-300 shadow-card md:max-w-[600px] md:rounded-2xl md:p-500">
         <div className="flex flex-row items-center gap-300 md:gap-400">
           <img
             src={iconStar}
             alt="Icon of a star"
-            className="h-[24px] w-[24px]"
+            className="h-[24px] w-[24px] md:h-[40px] md:w-[40px]"
           />
           <h1 className="text-preset-1">FAQs</h1>
         </div>
@@ -55,7 +55,7 @@ function FAQAccordion() {
               <div key={faq.id}>
                 <div
                   type="button"
-                  className="group mb-300 flex cursor-pointer flex-row items-center gap-300"
+                  className="group flex cursor-pointer flex-row items-center gap-300"
                   onClick={() => toggle(faq.id)}
                 >
                   <p className="flex-1 text-preset-2 group-hover:text-violet-600">
@@ -68,7 +68,7 @@ function FAQAccordion() {
                     className="h-[30px] w-[30px] justify-end"
                   />
                 </div>
-                {isOpen && <p className="mb-300 text-preset-3">{faq.answer}</p>}
+                {isOpen && <p className="mt-300 text-preset-3">{faq.answer}</p>}
                 {!isLast && (
                   <div className="my-300 border border-purple-100"></div>
                 )}
